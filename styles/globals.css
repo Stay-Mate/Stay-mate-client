@@ -37,6 +37,6 @@ html {
   }
 
   button {
-    @apply shadow-xl shadow-gray-300 rounded-sm uppercase bg-[#999] text-[#414843];
+    @apply shadow-xl shadow-gray-300 rounded-sm uppercase bg-[#c2c2c2] text-[#414843];
   }
 }
