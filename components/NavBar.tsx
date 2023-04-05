@@ -8,7 +8,7 @@ const NavBar = () => {
   const [nav, setNav] = useState(false);
 
   return (
-    <nav className="fixed flex flex-col  w-full h-[120px] shadow-md z-[100] ease-in-out duration-300 bg-[#FCFCFC]">
+    <nav className="fixed flex flex-col w-full h-[120px] shadow-md z-[100] ease-in-out duration-300 bg-[#FCFCFC]">
 
       <div className="flex justify-center items-center w-full h-full px-2 2xl:px-16">
         <Link href="/">
