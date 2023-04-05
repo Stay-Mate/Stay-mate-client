@@ -9,14 +9,18 @@ export default function LoginWrap() {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const response = await fetch("/login", {
+    const response = await fetch("/api/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ email, password }),
     });
+    // console.log(response);
+    
     const data = await response.json();
+    console.log(data);
+    
     if (data.success) {
       // JWT 토큰을 클라이언트에 저장하는 코드 작성
       console.log("success");
