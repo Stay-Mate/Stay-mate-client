@@ -41,12 +41,15 @@ export default function LoginWrap() {
             className="w-full h-full bg-slate-500] mt-[150px]"
             onSubmit={handleSubmit}
           >
+            <div className="flex flex-col">
+            <p className="float-left">email</p>
             <input
               className="p-2 mb-4 outline-none"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
             />
+            </div>
             <br />
             <input
               className="p-2 mb-4 outline-none"
