@@ -7,6 +7,7 @@ export const Profile = () => {
   return (
     <div className="col-span-3 w-[280px] h-auto shadow-xl shadow-gray-200 rounded-sm lg:p-4 bg-[#FBFBFB] mr-[150px]">
       <div className="w-[180px] h-[180px] bg-[#FCF7B6] rounded-[50%] mx-auto" />
+      <div></div>
       <div>
         <div className="flex pt-4 mb-3">
           <button className="mr-3 w-[120px] h-[40px] bg-[#FFB4B4] text-[#fff]">
@@ -18,7 +19,7 @@ export const Profile = () => {
         </div>
 
         <div className="w-[250px] h-[150px] mb-4">
-          <textarea className="p-2 w-full h-full outline-none text-gray-500"></textarea>
+          <textarea className="p-2 w-full h-full outline-none text-gray-500" placeholder="공지 내용을 입력해 주세요."></textarea>
         </div>
 
         <div className="flex mb-2">

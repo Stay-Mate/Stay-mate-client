@@ -17,12 +17,13 @@ export default function LoginWrap() {
       body: JSON.stringify({ email, password }),
     });
     // console.log(response);
-    
+
     const data = await response.json();
     console.log(data);
-    
+
     if (data.success) {
       // JWT 토큰을 클라이언트에 저장하는 코드 작성
+      localStorage.setItem("token", data.token);
       console.log("success");
       router.push("/");
     } else {
@@ -32,7 +33,7 @@ export default function LoginWrap() {
   };
 
   return (
-    <div className="fixed w-screen h-full flex">
+    <div className="fixed w-screen h-full flex bg-white">
       <div className="w-[450px] h-screen bg-[#FFB4B4]"></div>
       <div>
         <div className="w-[400px] h-[230px] ml-[300px] mt-[130px] text-center ">
@@ -42,24 +43,28 @@ export default function LoginWrap() {
             onSubmit={handleSubmit}
           >
             <div className="flex flex-col">
-            <p className="float-left">email</p>
-            <input
-              className="p-2 mb-4 outline-none"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
+              <div className="mr-96 text-gray-500">email</div>
+              <input
+                className="pt-3 pb-2 outline-none border-b-2 text-gray-600"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="이메일을 입력해주세요"
+                required
+              />
+            </div>
+            <div className="mt-2 flex flex-col">
+              <div className="mr-96 text-gray-500">password</div>
+              <input
+                className="pt-3 pb-2 mb-4 outline-none border-b-2 text-gray-600"
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="비밀번호를 입력해주세요"
+                required
+              />
             </div>
             <br />
-            <input
-              className="p-2 mb-4 outline-none"
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-            <br />
-            <button type="submit">login</button>
+            <button className="w-[140px] h-[40px] uppercase bg-[#ff9391] text-[#fff]" type="submit">log in</button>
           </form>
         </div>
       </div>
