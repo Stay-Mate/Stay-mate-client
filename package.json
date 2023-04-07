@@ -1,5 +1,6 @@
 {
   "name": "staymate-client",
+  "proxy": "http://localhost:5001",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -14,9 +15,11 @@
     "@types/react-dom": "18.0.11",
     "eslint": "8.37.0",
     "eslint-config-next": "13.2.4",
+    "http-proxy-middleware": "^2.0.6",
     "next": "13.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-hook-form": "^7.43.9",
     "react-icons": "^4.8.0",
     "typescript": "5.0.3"
   },

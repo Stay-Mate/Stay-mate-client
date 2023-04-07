@@ -1,8 +1,11 @@
+import LoginWrap from '@/components/LoginWrap'
 import React from 'react'
 
 const login = () => {
   return (
-    <div>login</div>
+    <div>
+      <LoginWrap/>
+    </div>
   )
 }
 

@@ -8,7 +8,7 @@ const NavBar = () => {
   const [nav, setNav] = useState(false);
 
   return (
-    <nav className="fixed flex flex-col  w-full h-[120px] shadow-md z-[100] ease-in-out duration-300 bg-[#FCFCFC]">
+    <nav className="fixed flex flex-col w-full h-[120px] shadow-md z-[100] ease-in-out duration-300 bg-[#FCFCFC]">
 
       <div className="flex justify-center items-center w-full h-full px-2 2xl:px-16">
         <Link href="/">
@@ -16,13 +16,13 @@ const NavBar = () => {
         </Link>
         <div className="flex">
           <input
-            className="w-[480px] h-[40px] p-3 rounded-3xl outline-none text-xs bg-[#efefef]"
+            className="w-[470px] h-[40px] p-3 rounded-3xl outline-none text-xs bg-[#efefef]"
             placeholder="잃어버린 물건을 검색해주세요"
           />
           {/* <FaSearch className="pt-2 bg-[#efefef] h-[40px] w-5"/> */}
         </div>
       </div>
-      <div className="ml-[600px] w-[350px] mb-2">
+      <div className="m-auto w-[350px]">
         <ul className="flex justify-between p-2 m-auto text-sm uppercase">
           <li className="mr-2 hover:text-[#B2A4FF] cursor-pointer">
             <Link href="/">홈</Link>
