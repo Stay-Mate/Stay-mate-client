@@ -1,4 +1,4 @@
-import { User } from '@/types/checkin.type'
+import { User } from '@/types/user.type'
 import React from 'react'
 
 const CheckinItem = ({studentNumber, name, depart, roomNumber, checkinTime}:User) => {

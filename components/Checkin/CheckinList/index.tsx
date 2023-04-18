@@ -5,7 +5,7 @@ const CheckinList = () => {
   return (
     <div className="w-[1000px] h-[1000px] bg-[#fff] border-x-gray-950 m-auto pt-[100px]">
       <div className="w-[750px] h-[70px] rounded-md m-auto hover:cursor-pointer ml-32">
-        <ul className="flex justify-evenly font-bold pt-5">
+        <ul className="flex justify-evenly font-mono text-xl pt-5">
           <li>학번</li>
           <li>이름</li>
           <li>구분</li>
