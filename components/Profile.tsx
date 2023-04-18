@@ -17,7 +17,9 @@ export const Profile = () => {
         </div>
 
         <div className="flex mb-2">
-          <button className="mr-3 w-[120px] h-[40px] bg-[#877F8F] text-[#fff]">
+          <button className="mr-3 w-[120px] h-[40px] bg-[#877F8F] text-[#fff]" onClick={() => {
+            Router.push('/noticelist')
+          }}>
             최근 공지
           </button>
           <button className="w-[120px] h-[40px] bg-[#303261] text-[#fff]">
@@ -25,13 +27,18 @@ export const Profile = () => {
           </button>
         </div>
 
-        <button className=" w-[250px] h-[30px] mb-2 bg-[#FF8080] text-[#fff]">
+        <button
+          className=" w-[250px] h-[30px] mb-2 bg-[#FF8080] text-[#fff]"
+          onClick={() => {
+            Router.push("/checkin");
+          }}
+        >
           입소현황
         </button>
         <button className=" w-[250px] h-[30px] mb-2 bg-[#df3535cb] text-[#fff]">
           분실물 신고하기
         </button>
-        
+
         {isLoggedIn ? (
           <button
             className=" w-[250px] h-[30px]"
