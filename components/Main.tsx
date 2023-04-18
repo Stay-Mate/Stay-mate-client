@@ -6,9 +6,7 @@ import { LostpostList } from "./LostpostList";
 const Main = () => {
   return (
     <div className="">
-      {/* w-full h-screen flex text-center */}
-      <div className="flex justify-between p-[200px]">
-        {/* "max-w-[1600px] w-[500px] h-full mx-auto p-2 justify-between items-center grid lg:grid-cols-5 gap-20" */}
+      <div className="flex pt-[130px] pl-[200px]">
         <LostpostList/>
         <Profile/>
       </div>

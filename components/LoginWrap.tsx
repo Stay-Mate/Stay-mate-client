@@ -16,7 +16,6 @@ export default function LoginWrap() {
       },
       body: JSON.stringify({ email, password }),
     });
-    // console.log(response);
 
     const data = await response.json();
     console.log(data);
