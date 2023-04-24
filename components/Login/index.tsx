@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import React, { FormEvent, useState } from "react";
 
-export default function LoginWrap() {
+export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 

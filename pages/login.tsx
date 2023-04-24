@@ -1,10 +1,10 @@
-import LoginWrap from '@/components/LoginWrap'
+import Login from '@/components/Login'
 import React from 'react'
 
 const login = () => {
   return (
     <div>
-      <LoginWrap/>
+      <Login/>
     </div>
   )
 }

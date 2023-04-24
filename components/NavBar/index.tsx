@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
-import navlogo from "../public/assets/navLogo.png";
+import navlogo from "../../public/assets/navLogo.png";
 
 const NavBar = () => {
   const [nav, setNav] = useState(false);
