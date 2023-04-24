@@ -5,7 +5,7 @@ const Signup = () => {
   const [name, setName ] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [roomNumber, setRoomNumber] = useState(0);
+  const [room_number, setRoomNumber] = useState("");
 
   const router = useRouter();
 
@@ -16,7 +16,7 @@ const Signup = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ name, email, password, roomNumber }),
+      body: JSON.stringify({ name, email, password, room_number}),
     });
 
     const data = await response.json();
@@ -74,8 +74,10 @@ const Signup = () => {
             <div>
               <div>Room</div>
               <input
-                value={roomNumber}
-                onChange={(e) => setRoomNumber(parseInt(e.target.value))}
+                value={room_number}
+                onChange={(e) => {
+                  setRoomNumber(e.target.value)
+                }}
                 placeholder="이메일을 입력해주세요"
                 required
               />
