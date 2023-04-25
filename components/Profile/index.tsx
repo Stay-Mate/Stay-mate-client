@@ -17,9 +17,12 @@ export const Profile = () => {
         </div>
 
         <div className="flex mb-2">
-          <button className="mr-3 w-[120px] h-[40px] bg-[#877F8F] text-[#fff]" onClick={() => {
-            Router.push('/noticelist')
-          }}>
+          <button
+            className="mr-3 w-[120px] h-[40px] bg-[#877F8F] text-[#fff]"
+            onClick={() => {
+              Router.push("/noticelist");
+            }}
+          >
             최근 공지
           </button>
           <button className="w-[120px] h-[40px] bg-[#303261] text-[#fff]">
@@ -35,7 +38,12 @@ export const Profile = () => {
         >
           입소현황
         </button>
-        <button className=" w-[250px] h-[30px] mb-2 bg-[#df3535cb] text-[#fff]">
+        <button
+          className=" w-[250px] h-[30px] mb-2 bg-[#df3535cb] text-[#fff]"
+          onClick={() => {
+            Router.push("/lostpost");
+          }}
+        >
           분실물 신고하기
         </button>
 
