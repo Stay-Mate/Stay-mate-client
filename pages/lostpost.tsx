@@ -5,7 +5,7 @@ import React from "react";
 const lostpost = () => {
   return (
     <>
-      <NavBar />
+      {/* <NavBar /> */}
       <LostpostForm/>
     </>
   );
