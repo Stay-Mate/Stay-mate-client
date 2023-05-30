@@ -8,7 +8,7 @@ const Main = () => {
     <div className="">
       <div className="flex pt-[130px] pl-[200px]">
         <LostpostList />
-        {/* <Profile /> */}
+        <Profile />
       </div>
     </div>
   );
