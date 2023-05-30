@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { PostType } from "../../types/post.type";
+import formatDateTime from "@/utils/formDateTime";
 
 export const LostpostList = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [postList, setPostList] = useState<PostType[]>([]);
 
   useEffect(() => {
@@ -21,15 +21,6 @@ export const LostpostList = () => {
     fetchPosts();
   }, []); // 빈 배열을 전달하여 컴포넌트가 마운트될 때만 호출되도록 설정
 
-  const formatDateTime = (dateTimeString: string | number | Date) => {
-    const dateTime = new Date(dateTimeString);
-    const month = dateTime.toLocaleString("default", { month: "long" });
-    const day = dateTime.getDate();
-    const hour = dateTime.getHours();
-    const minute = dateTime.getMinutes();
-
-    return `${month} ${day}일 ${hour}시 ${minute}분`;
-  };
 
   return (
     <div>
