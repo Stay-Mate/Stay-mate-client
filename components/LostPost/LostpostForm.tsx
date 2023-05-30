@@ -11,10 +11,12 @@ import { PostType } from "@/types/post.type";
 
 const LostpostForm = () => {
   const [post, setPost] = useState<PostType>({
+    post_id: "",
+    user_id: "",
     title: "",
     content: "",
-    imgUrl: "",
-    createdAt: "",
+    img_url: "",
+    created_at: "",
   });
 
   const [error, setError] = useState<string>("");
@@ -38,7 +40,7 @@ const LostpostForm = () => {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (!post.title && !post.content && !post.imgUrl) {
+    if (!post.title && !post.content && !post.img_url) {
       setError("모든 항목은 필수 항목입니다.");
       console.log("FAIL");
       return;
