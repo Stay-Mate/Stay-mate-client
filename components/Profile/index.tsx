@@ -1,8 +1,9 @@
+import { useLogin } from "@/hooks/useLogin";
 import Router from "next/router";
 import React, { useState } from "react";
 
 export const Profile = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const { isLoggedIn, handleLogout } = useLogin();
 
   return (
     <div className="col-span-3 w-[280px] h-auto shadow-xl shadow-gray-200 rounded-sm lg:p-4 bg-[#FBFBFB] mr-[150px]">
