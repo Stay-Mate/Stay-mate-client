@@ -10,7 +10,6 @@ import { useRouter } from "next/router";
 import { PostType } from "@/types/post.type";
 
 const LostpostForm = () => {
-
   const [post, setPost] = useState<PostType>({
     post_id: "",
     user_id: "",
@@ -38,37 +37,19 @@ const LostpostForm = () => {
     router.push("/");
   };
 
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-  if (!post.title && !post.content && !post.img_url) {
-    setError("모든 항목은 필수 항목입니다.");
-    console.log("FAIL");
-    return;
-  }
-
-  try {
-    const response = await fetch("/api/post", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(post),
-    });
-
-    if (response.ok) {
-      console.log("SUCCESS");
-      router.push("/");
-    } else {
+    if (!post.title && !post.content && !post.img_url) {
+      setError("모든 항목은 필수 항목입니다.");
       console.log("FAIL");
-      // Handle the error response from the API if needed
+      return;
+    } else {
+      // TODO: Add logic to handle form submission
+      console.log("SUCCESS", post);
     }
-  } catch (error) {
-    console.log("FAIL", error);
-    // Handle any network or other errors that occurred
-  }
 
-  setError(""); // 에러 초기화
+    setError(""); // 에러 초기화
   };
 
   useEffect(() => {
