@@ -1,36 +1,9 @@
+import { useLogin } from "@/hooks/useLogin";
 import { useRouter } from "next/router";
 import React, { FormEvent, useState } from "react";
 
 export default function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  const router = useRouter();
-
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const response = await fetch("/api/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email, password }),
-    });
-
-    const data = await response.json();
-    console.log(data);
-
-    if (data.success) {
-      // JWT 토큰을 클라이언트에 저장하는 코드 작성
-      localStorage.setItem("token", data.token);
-      console.log("success");
-      router.push("/");
-    } else {
-      // 로그인 실패 처리
-      console.log("Sorry");
-    }
-  };
-
+  const { email, setEmail, password, setPassword, handleSubmit } = useLogin();
   return (
     <div className="fixed w-screen h-full flex bg-white">
       <div className="w-[450px] h-screen bg-[#FFB4B4]"></div>
@@ -63,7 +36,12 @@ export default function Login() {
               />
             </div>
             <br />
-            <button className="w-[140px] h-[40px] uppercase bg-[#ff9391] text-[#fff]" type="submit">log in</button>
+            <button
+              className="w-[140px] h-[40px] uppercase bg-[#ff9391] text-[#fff]"
+              type="submit"
+            >
+              log in
+            </button>
           </form>
         </div>
       </div>
