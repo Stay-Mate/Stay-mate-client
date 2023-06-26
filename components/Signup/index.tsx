@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { FormEvent, useState } from "react";
 
@@ -92,6 +93,10 @@ const Signup = () => {
             >
               sign up
             </button>
+            <br />
+            <Link className="text-[12px]" href="/login">
+              현재 계정이 있습니까?
+            </Link>
           </form>
         </div>
       </div>

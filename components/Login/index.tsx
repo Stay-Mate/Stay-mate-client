@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useLogin } from "@/hooks/useLogin";
 import { useRouter } from "next/router";
 import React, { FormEvent, useState } from "react";
@@ -15,7 +16,7 @@ export default function Login() {
             onSubmit={handleSubmit}
           >
             <div className="flex flex-col">
-              <div className="mr-96 text-gray-500">email</div>
+              <div className="mr-[350px] text-gray-500">이메일</div>
               <input
                 className="pt-3 pb-2 outline-none border-b-2 text-gray-600"
                 value={email}
@@ -25,7 +26,7 @@ export default function Login() {
               />
             </div>
             <div className="mt-2 flex flex-col">
-              <div className="mr-96 text-gray-500">password</div>
+              <div className="mr-[340px] text-gray-500">비밀번호</div>
               <input
                 className="pt-3 pb-2 mb-4 outline-none border-b-2 text-gray-600"
                 type="password"
@@ -42,6 +43,10 @@ export default function Login() {
             >
               log in
             </button>
+            <br />
+            <Link className="text-[12px]" href="/signup">
+              아직 계정이 없습니까?
+            </Link>
           </form>
         </div>
       </div>
