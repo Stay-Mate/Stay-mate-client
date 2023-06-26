@@ -1,4 +1,4 @@
-import LostpostForm from "@/components/LostPost/LostpostForm";
+import LostpostForm from "@/components/LostPost/NoticepostForm";
 import NavBar from "@/components/NavBar";
 import React from "react";
 

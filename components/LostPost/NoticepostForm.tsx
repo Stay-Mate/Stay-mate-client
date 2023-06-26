@@ -9,8 +9,7 @@ import NavBar from "../NavBar";
 import { useRouter } from "next/router";
 import { PostType } from "@/types/post.type";
 
-const LostpostForm = () => {
-
+const NoticepostForm = () => {
   const [post, setPost] = useState<PostType>({
     post_id: "",
     user_id: "",
@@ -41,34 +40,34 @@ const LostpostForm = () => {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-  if (!post.title && !post.content && !post.img_url) {
-    setError("모든 항목은 필수 항목입니다.");
-    console.log("FAIL");
-    return;
-  }
-
-  try {
-    const response = await fetch("/api/post", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(post),
-    });
-
-    if (response.ok) {
-      console.log("SUCCESS");
-      router.push("/");
-    } else {
+    if (!post.title && !post.content && !post.img_url) {
+      setError("모든 항목은 필수 항목입니다.");
       console.log("FAIL");
-      // Handle the error response from the API if needed
+      return;
     }
-  } catch (error) {
-    console.log("FAIL", error);
-    // Handle any network or other errors that occurred
-  }
 
-  setError(""); // 에러 초기화
+    try {
+      const response = await fetch("/api/post", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(post),
+      });
+
+      if (response.ok) {
+        console.log("SUCCESS");
+        router.push("/");
+      } else {
+        console.log("FAIL");
+        // Handle the error response from the API if needed
+      }
+    } catch (error) {
+      console.log("FAIL", error);
+      // Handle any network or other errors that occurred
+    }
+
+    setError(""); // 에러 초기화
   };
 
   useEffect(() => {
@@ -112,10 +111,6 @@ const LostpostForm = () => {
             }
           />
           <br />
-          <div className="w-[800px] h-[300px] bg-[#F6EBEB] ml-10 mt-4 pt-[120px] pl-[300px]">
-            <input type="file" accept="image/*" onChange={handleImgChange} />
-          </div>
-          {/* {error && <p style={{ color: "red" }}>{error}</p>} */}
           <div className="w-[210px] h-[40px] mt-[60px] ml-[330px] flex justify-between">
             <button
               className="w-[100px] h-full bg-[#FFB4B4] text-[#fff]"
@@ -136,4 +131,4 @@ const LostpostForm = () => {
   );
 };
 
-export default LostpostForm;
+export default NoticepostForm;
