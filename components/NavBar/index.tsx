@@ -6,6 +6,10 @@ import navlogo from "../../public/assets/navLogo.png";
 const NavBar = () => {
   const [nav, setNav] = useState(false);
 
+  // TODO : custom Hook을 통해 상채 가져오기
+  const isAdmin = false;
+  const isLoggedIn = true;
+
   return (
     <nav className="fixed flex flex-col  w-full h-[110px] shadow-md z-[100] ease-in-out duration-300 bg-[#FCFCFC]">
       <div className="flex justify-center items-center w-full h-full px-2 2xl:px-16">
@@ -24,15 +28,29 @@ const NavBar = () => {
           <li className="mr-2 hover:text-[#B2A4FF] cursor-pointer">
             <Link href="/main">홈</Link>
           </li>
-          <li className="mr-2 hover:text-[#B2A4FF] cursor-pointer">
-            <Link href="/allenter">입소현황</Link>
-          </li>
-          <li className="mr-2 hover:text-[#B2A4FF] cursor-pointer">
-            <Link href="/noticepost">공지작성</Link>
-          </li>
-          <li className="mr-2 hover:text-[#B2A4FF] cursor-pointer">
-            <Link href="/login">로그인</Link>
-          </li>
+          {isAdmin && isLoggedIn ? (
+            <li className="mr-2 hover:text-[#B2A4FF] cursor-pointer">
+              <Link href="/allenter">전체 입소현황</Link>
+            </li>
+          ) : (
+            <li className="mr-2 hover:text-[#B2A4FF] cursor-pointer">
+              <Link href="/enter">입소현황</Link>
+            </li>
+          )}
+          {isAdmin && isLoggedIn ? (
+            <li className="mr-2 hover:text-[#B2A4FF] cursor-pointer">
+              <Link href="/noticepost">공지작성</Link>
+            </li>
+          ) : null}
+          {isLoggedIn ? (
+            <li className="mr-2 hover:text-[#B2A4FF] cursor-pointer">
+              <Link href="/login">로그아웃</Link>
+            </li>
+          ) : (
+            <li className="mr-2 hover:text-[#B2A4FF] cursor-pointer">
+              <Link href="/login">로그인</Link>
+            </li>
+          )}
         </ul>
       </div>
 

@@ -34,7 +34,7 @@ const NoticepostForm = () => {
 
   const handleCancel = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    router.push("/");
+    router.push("/main");
   };
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -100,7 +100,7 @@ const NoticepostForm = () => {
           />
           <br />
           <input
-            className="w-[800px] h-[40px] outline-none text-xl text-[#766D6D] ml-10 mt-5 p-2 border-b-2"
+            className="w-[800px] h-[50px] outline-none text-lg text-[#766D6D] ml-10 mt-5 p-2 border-b-2"
             placeholder="내용"
             value={post.content}
             onChange={(e) =>
