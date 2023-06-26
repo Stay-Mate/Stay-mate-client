@@ -8,8 +8,7 @@ const NavBar = () => {
   const [nav, setNav] = useState(false);
 
   // TODO : custom Hook을 통해 상채 가져오기
-  const isAdmin = false;
-  const { isLoggedIn,handleLogout } = useLogin();
+  const { isAdmin, isLoggedIn, handleLogout } = useLogin();
 
   return (
     <nav className="fixed flex flex-col  w-full h-[110px] shadow-md z-[100] ease-in-out duration-300 bg-[#FCFCFC]">
@@ -45,7 +44,9 @@ const NavBar = () => {
           ) : null}
           {isLoggedIn ? (
             <li className="mr-2 hover:text-[#B2A4FF] cursor-pointer">
-              <button onClick={handleLogout} className="bg-[#fff] shadow-none">로그아웃</button>
+              <button onClick={handleLogout} className="bg-[#fff] shadow-none">
+                로그아웃
+              </button>
             </li>
           ) : (
             <li className="mr-2 hover:text-[#B2A4FF] cursor-pointer">

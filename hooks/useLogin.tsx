@@ -2,9 +2,10 @@ import React, { useState, FormEvent, useEffect, MouseEvent } from "react";
 import { useRouter } from "next/router";
 
 export const useLogin = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+  const [isAdmin, setIsAdmin] = useState<boolean>(false);
 
   const router = useRouter();
 
@@ -29,11 +30,11 @@ export const useLogin = () => {
     });
 
     const data = await response.json();
-    console.log(data);
 
     if (data.success) {
       // JWT 토큰을 클라이언트에 저장하는 코드 작성
       localStorage.setItem("token", data.token);
+      setIsAdmin(data.isAdmin);
       console.log("success");
       router.push("/main");
     } else {
@@ -56,5 +57,6 @@ export const useLogin = () => {
     handleSubmit,
     handleLogout,
     isLoggedIn,
+    isAdmin,
   };
 };
