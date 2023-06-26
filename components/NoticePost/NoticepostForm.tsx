@@ -12,11 +12,9 @@ import { PostType } from "@/types/post.type";
 const NoticepostForm = () => {
   const [post, setPost] = useState<PostType>({
     post_id: "",
-    user_name: "",
-    user_id: "",
+    name: "",
     title: "",
     content: "",
-    img_url: "",
     created_at: "",
   });
 
@@ -41,7 +39,7 @@ const NoticepostForm = () => {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (!post.title && !post.content && !post.img_url) {
+    if (!post.title && !post.content) {
       setError("모든 항목은 필수 항목입니다.");
       console.log("FAIL");
       return;
@@ -58,7 +56,7 @@ const NoticepostForm = () => {
 
       if (response.ok) {
         console.log("SUCCESS");
-        router.push("/");
+        router.push("/main");
       } else {
         console.log("FAIL");
         // Handle the error response from the API if needed
