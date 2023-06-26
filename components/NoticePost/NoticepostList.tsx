@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { PostType } from "../../types/post.type";
 import formatDateTime from "@/utils/formDateTime";
 
-export const LostpostList = () => {
+export const NoticepostList = () => {
   const [postList, setPostList] = useState<PostType[]>([]);
 
   useEffect(() => {
@@ -35,7 +35,6 @@ export const LostpostList = () => {
           </div>
           <div className="flex w-full h-[15px] mt-4">{post.title}</div>
           <p className="w-full h-full text-xl pt-2">{post.content}</p>
-          <img src={post.img_url} alt="이미지" />
           <div>{formatDateTime(post.created_at)}</div>
         </div>
       ))}

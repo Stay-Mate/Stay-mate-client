@@ -12,6 +12,7 @@ import { PostType } from "@/types/post.type";
 const NoticepostForm = () => {
   const [post, setPost] = useState<PostType>({
     post_id: "",
+    user_name: "",
     user_id: "",
     title: "",
     content: "",
