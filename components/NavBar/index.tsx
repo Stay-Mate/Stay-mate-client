@@ -2,13 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import navlogo from "../../public/assets/navLogo.png";
+import { useLogin } from "@/hooks/useLogin";
 
 const NavBar = () => {
   const [nav, setNav] = useState(false);
 
   // TODO : custom Hook을 통해 상채 가져오기
   const isAdmin = false;
-  const isLoggedIn = true;
+  const { isLoggedIn,handleLogout } = useLogin();
 
   return (
     <nav className="fixed flex flex-col  w-full h-[110px] shadow-md z-[100] ease-in-out duration-300 bg-[#FCFCFC]">
@@ -44,7 +45,7 @@ const NavBar = () => {
           ) : null}
           {isLoggedIn ? (
             <li className="mr-2 hover:text-[#B2A4FF] cursor-pointer">
-              <Link href="/login">로그아웃</Link>
+              <button onClick={handleLogout} className="bg-[#fff] shadow-none">로그아웃</button>
             </li>
           ) : (
             <li className="mr-2 hover:text-[#B2A4FF] cursor-pointer">
@@ -53,7 +54,6 @@ const NavBar = () => {
           )}
         </ul>
       </div>
-
       {/* 반응형 Nav */}
       <div className=""></div>
     </nav>

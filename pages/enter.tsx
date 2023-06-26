@@ -1,12 +1,14 @@
-import { Enter } from '@/components/Enter'
-import React from 'react'
+import { Enter } from "@/components/Enter";
+import NavBar from "@/components/NavBar";
+import React from "react";
 
 const enter = () => {
   return (
     <div>
-      <Enter/>
+      <NavBar />
+      <Enter />
     </div>
-  )
-}
+  );
+};
 
-export default enter
+export default enter;
