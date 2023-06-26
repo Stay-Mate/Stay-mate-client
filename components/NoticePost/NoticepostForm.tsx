@@ -19,16 +19,6 @@ const NoticepostForm = () => {
   });
 
   const [error, setError] = useState<string>("");
-
-  const handleImgChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    const imgUrl = URL.createObjectURL(file as Blob);
-    setPost((prevPost) => ({
-      ...prevPost,
-      imgUrl: imgUrl,
-    }));
-  };
-
   const router = useRouter();
 
   const handleCancel = (e: MouseEvent<HTMLButtonElement>) => {
