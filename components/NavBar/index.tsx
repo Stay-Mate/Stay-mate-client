@@ -33,7 +33,7 @@ const NavBar = () => {
           <li className="mr-2 hover:text-[#B2A4FF] cursor-pointer">
             <Link href="/main">홈</Link>
           </li>
-          {isAdmin && isLoggedIn ? (
+          {(isAdmin === "1") && isLoggedIn ? (
             <li className="mr-2 hover:text-[#B2A4FF] cursor-pointer">
               <Link href="/allenter">전체 입소현황</Link>
             </li>
@@ -42,7 +42,7 @@ const NavBar = () => {
               <Link href="/enter">입소현황</Link>
             </li>
           )}
-          {isAdmin && isLoggedIn ? (
+          {(isAdmin === "1") && isLoggedIn ? (
             <li className="mr-2 hover:text-[#B2A4FF] cursor-pointer">
               <Link href="/noticepost">공지작성</Link>
             </li>
