@@ -7,6 +7,8 @@ const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [room_number, setRoomNumber] = useState("");
+  const [emailValid, setEmaiValid] = useState(true);
+  const [passwordlValid, setPasswordValid] = useState(true);
 
   const router = useRouter();
 
@@ -59,10 +61,25 @@ const Signup = () => {
               <input
                 className="pt-3 pb-2 outline-none border-b-2 text-gray-600"
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e) => {
+                  const value = e.target.value;
+                  setEmail(value);
+                  setEmaiValid(value.includes("@bssm.hs.kr"));
+                }}
                 placeholder="이메일을 입력해주세요"
                 required
               />
+              {!emailValid ? (
+                <p className="mr-32 mb-3 text-red-700">
+                  {" "}
+                  {"@bssm.hs.kr"} 를 포함하여 입력하세요.
+                </p>
+              ) : (
+                <p className="mr-32 mb-3">
+                  {" "}
+                  {"@bssm.hs.kr"}를 포함하여 입력하세요.
+                </p>
+              )}
             </div>
             <div className="flex flex-col mb-4">
               <div className="mr-96 text-gray-500">password</div>
@@ -70,10 +87,22 @@ const Signup = () => {
                 className="pt-3 pb-2 outline-none border-b-2 text-gray-600"
                 type="password"
                 value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={(e) => {
+                  const value = e.target.value;
+                  setPassword(value);
+                  setPasswordValid(value.length >= 8);
+                }}
                 placeholder="비밀번호를 입력해주세요."
                 required
               />
+              {!passwordlValid ? (
+                <p className="mr-60 mb-3 text-red-700">
+                  {" "}
+                  8자리 이상 입력하세요.
+                </p>
+              ) : (
+                <p className="mr-60 mb-3"> 8자리 이상 입력하세요.</p>
+              )}
             </div>
             <div className="flex flex-col mb-4">
               <div className="mr-96 text-gray-500">Room</div>
@@ -90,6 +119,7 @@ const Signup = () => {
             <button
               className="w-[140px] h-[40px] uppercase bg-[#ff9391] text-[#fff]"
               type="submit"
+              disabled={!emailValid || !passwordlValid}
             >
               sign up
             </button>
