@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { PostType } from "../../types/post.type";
-import formatDateTime from "@/utils/formDateTime";
 import axios from "axios";
+import { NoticePostItem } from "./NoticePostItem";
 
 export const NoticepostList = () => {
   const [postList, setPostList] = useState<PostType[]>([]);
-
   useEffect(() => {
     // API 호출 함수
     const fetchPosts = async () => {
@@ -27,18 +26,14 @@ export const NoticepostList = () => {
   return (
     <div className="ml-[200px]">
       {postList.map((post: PostType) => (
-        <div
-          className="col-span-3 w-[650px] h-auto shadow-xl shadow-gray-200 rounded-sm lg:p-4 bg-[#FBFBFB] mr-[50px]"
-          key={post.created_at}
-        >
-          <div className="w-[100px] flex justify-between">
-            <div className="w-[45px] h-[45px] bg-orange-700 rounded-[50%]"></div>
-            <p className="pt-2">{post.name}</p>
-          </div>
-          <div className="flex w-full h-[15px] mt-4">{post.title}</div>
-          <p className="w-full h-full text-xl pt-2">{post.content}</p>
-          <div>{formatDateTime(post.created_at)}</div>
-        </div>
+        <>
+          <NoticePostItem
+            created_at={post.created_at}
+            name={post.name}
+            title={post.title}
+            content={post.content}
+          />
+        </>
       ))}
     </div>
   );
