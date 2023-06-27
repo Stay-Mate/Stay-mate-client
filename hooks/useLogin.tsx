@@ -5,7 +5,6 @@ export const useLogin = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
-  const [isAdmin, setIsAdmin] = useState<boolean>(false);
 
   const router = useRouter();
 
@@ -34,7 +33,7 @@ export const useLogin = () => {
     if (data.success) {
       // JWT 토큰을 클라이언트에 저장하는 코드 작성
       localStorage.setItem("token", data.token);
-      setIsAdmin(data.isAdmin);
+      localStorage.setItem("admin", data.isAdmin);
       console.log("success");
       router.push("/main");
     } else {
@@ -57,6 +56,5 @@ export const useLogin = () => {
     handleSubmit,
     handleLogout,
     isLoggedIn,
-    isAdmin,
   };
 };

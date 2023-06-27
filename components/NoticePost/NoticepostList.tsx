@@ -29,7 +29,7 @@ export const NoticepostList = () => {
       {postList.map((post: PostType) => (
         <div
           className="col-span-3 w-[650px] h-auto shadow-xl shadow-gray-200 rounded-sm lg:p-4 bg-[#FBFBFB] mr-[50px]"
-          key={post.post_id}
+          key={post.created_at}
         >
           <div className="w-[100px] flex justify-between">
             <div className="w-[45px] h-[45px] bg-orange-700 rounded-[50%]"></div>

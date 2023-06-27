@@ -6,9 +6,14 @@ import { useLogin } from "@/hooks/useLogin";
 
 const NavBar = () => {
   const [nav, setNav] = useState(false);
-
   // TODO : custom Hook을 통해 상채 가져오기
-  const { isAdmin, isLoggedIn, handleLogout } = useLogin();
+  const { isLoggedIn, handleLogout } = useLogin();
+  let isAdmin;
+  
+  if (typeof window !== "undefined") {
+    // Perform localStorage action
+    isAdmin = localStorage.getItem("admin");
+  }
 
   return (
     <nav className="fixed flex flex-col  w-full h-[110px] shadow-md z-[100] ease-in-out duration-300 bg-[#FCFCFC]">
