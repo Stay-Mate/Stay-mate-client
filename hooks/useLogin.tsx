@@ -34,6 +34,7 @@ export const useLogin = () => {
       // JWT 토큰을 클라이언트에 저장하는 코드 작성
       localStorage.setItem("token", data.token);
       localStorage.setItem("admin", data.isAdmin);
+      localStorage.setItem("userId", data.userId);
       console.log("success");
       router.push("/main");
     } else {
@@ -46,6 +47,8 @@ export const useLogin = () => {
     router.push("/");
     setIsLoggedIn(false);
     localStorage.removeItem("token");
+    localStorage.removeItem("admin");
+    localStorage.removeItem("userId");
   };
 
   return {

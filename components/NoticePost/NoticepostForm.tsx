@@ -10,6 +10,13 @@ import { useRouter } from "next/router";
 import { PostType } from "@/types/post.type";
 
 const NoticepostForm = () => {
+  let user_id: string | null;
+
+  if (typeof window !== "undefined") {
+    // Perform localStorage action
+    user_id = localStorage.getItem("userId");
+  }
+
   const [post, setPost] = useState<PostType>({
     post_id: "",
     name: "",
@@ -41,7 +48,7 @@ const NoticepostForm = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(post),
+        body: JSON.stringify({ ...post, user_id: user_id }),
       });
 
       if (response.ok) {

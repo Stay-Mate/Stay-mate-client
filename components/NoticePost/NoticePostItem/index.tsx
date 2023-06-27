@@ -17,7 +17,7 @@ export const NoticePostItem = ({ created_at, name, title, content }: Props) => {
   }
 
   return (
-    <div>
+    <div className="mb-5">
       <div
         className="col-span-3 w-[650px] h-auto shadow-xl shadow-gray-200 rounded-sm lg:p-4 bg-[#FBFBFB] mr-[50px]"
         key={created_at}
