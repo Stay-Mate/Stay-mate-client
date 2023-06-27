@@ -27,7 +27,7 @@ const NavBar = () => {
         <Link href="/main">
           <Image src={navlogo} alt="/" width={100} height={100} />
         </Link>
-        <div className="flex">
+        <div className="hidden md:flex">
           <input
             className="w-[480px] h-[40px] p-3 rounded-3xl outline-none text-xs bg-[#efefef]"
             placeholder="잃어버린 물건을 검색해주세요"
@@ -66,8 +66,8 @@ const NavBar = () => {
           )}
         </ul>
 
-        <div onClick={handleNavBar} className="md:hidden">
-          <AiOutlineMenu size={25} />
+        <div onClick={handleNavBar} className="ml-[360px] pt-10 md:hidden">
+          <AiOutlineMenu size={30} />
         </div>
       </div>
       {/* 반응형 Nav */}
@@ -96,26 +96,26 @@ const NavBar = () => {
           </div>
 
           <div className="py-4 flex flex-col">
-            <ul className="ml-4 uppercase text-[35px]">
-              <li className="mr-2 hover:text-[#B2A4FF] cursor-pointer">
+            <ul className="ml-4 uppercase text-[35px] py-4">
+              <li className="mr-2 hover:text-[#B2A4FF] cursor-pointer mb-4">
                 <Link href="/main">홈</Link>
               </li>
               {isAdmin === "1" && isLoggedIn ? (
-                <li className="mr-2 hover:text-[#B2A4FF] cursor-pointer">
+                <li className="mr-2 hover:text-[#B2A4FF] cursor-pointer mb-4">
                   <Link href="/allenter">전체 입소현황</Link>
                 </li>
               ) : (
-                <li className="mr-2 hover:text-[#B2A4FF] cursor-pointer">
+                <li className="mr-2 hover:text-[#B2A4FF] cursor-pointer mb-4">
                   <Link href="/enter">입소현황</Link>
                 </li>
               )}
               {isAdmin === "1" && isLoggedIn ? (
-                <li className="mr-2 hover:text-[#B2A4FF] cursor-pointer">
+                <li className="mr-2 hover:text-[#B2A4FF] cursor-pointer mb-4">
                   <Link href="/noticepost">공지작성</Link>
                 </li>
               ) : null}
               {isLoggedIn ? (
-                <li className="mr-2 hover:text-[#B2A4FF] cursor-pointer">
+                <li className="mr-2 hover:text-[#B2A4FF] cursor-pointer mb-4">
                   <button
                     onClick={handleLogout}
                     className="bg-[#ECF0F3] shadow-none"
