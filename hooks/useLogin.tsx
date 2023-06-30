@@ -1,10 +1,10 @@
-import React, { useState, FormEvent, useEffect } from "react";
+import React, { useState, FormEvent, useEffect, MouseEvent } from "react";
 import { useRouter } from "next/router";
 
 export const useLogin = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
 
   const router = useRouter();
 
@@ -29,22 +29,26 @@ export const useLogin = () => {
     });
 
     const data = await response.json();
-    console.log(data);
 
     if (data.success) {
       // JWT 토큰을 클라이언트에 저장하는 코드 작성
       localStorage.setItem("token", data.token);
+      localStorage.setItem("admin", data.isAdmin);
+      localStorage.setItem("userId", data.userId);
       console.log("success");
-      router.push("/");
+      router.push("/main");
     } else {
       // 로그인 실패 처리
       console.log("Sorry");
     }
   };
 
-  const handleLogout = () => {
-    localStorage.removeItem("token");
+  const handleLogout = (e: MouseEvent<HTMLButtonElement>) => {
     router.push("/");
+    setIsLoggedIn(false);
+    localStorage.removeItem("token");
+    localStorage.removeItem("admin");
+    localStorage.removeItem("userId");
   };
 
   return {

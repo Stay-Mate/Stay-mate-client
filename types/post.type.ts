@@ -1,8 +1,7 @@
 export interface PostType {
-  user_id: string;
-  post_id: string; 
+  name: string;
+  post_id: number;
   title: string;
   content: string;
-  img_url: string;
   created_at: string;
 }
