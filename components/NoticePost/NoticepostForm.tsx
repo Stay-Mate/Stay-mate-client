@@ -18,7 +18,7 @@ const NoticepostForm = () => {
   }
 
   const [post, setPost] = useState<PostType>({
-    post_id: "",
+    post_id: 0,
     name: "",
     title: "",
     content: "",
