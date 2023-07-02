@@ -4,30 +4,24 @@ import { QrReader } from "react-qr-reader";
 export const Qrscan = () => {
   const [selected, setSelected] = useState<string>("environment");
   const [startScan, setStartScan] = useState<boolean>(false);
-  const [loadingScan, setLoadingScan] = useState<boolean>(false);
   const [data, setData] = useState<string>("");
 
   return (
-    <div>
-      <h3>QR 스캔하기</h3>
-      <h4>
-        Last Scan:
-        {selected}
-      </h4>
-
+    <div className="text-center">
       <button
+        className="w-[130px] h-[40px] mb-5"
         onClick={() => {
           setStartScan(!startScan);
         }}
       >
-        {startScan ? "Stop Scan" : "Start Scan"}
+        {startScan ? "인증 그만하기" : "인증 시작하기"}
       </button>
 
       {startScan && (
-        <>
+        <div >
           <select onChange={(e) => setSelected(e.target.value)}>
-            <option value={"environment"}>Back Camera</option>
-            <option value={"user"}>Front Camera</option>
+            <option value={"environment"}>후면 카메라</option>
+            <option value={"user"}>전면 카메라</option>
           </select>
           <QrReader
             scanDelay={1000}
@@ -36,17 +30,15 @@ export const Qrscan = () => {
               if (result) {
                 setData(result?.getText());
                 console.log(`loaded >>>`, result);
-                setStartScan(false);
-                setLoadingScan(false);
               }
               if (!!error) {
                 console.log(error);
               }
             }}
-            className="w-[400px] h-[400px]"
+            className="m-auto w-[500px] h-[200%] border-4"
           />
           {data}
-        </>
+        </div>
       )}
     </div>
   );
