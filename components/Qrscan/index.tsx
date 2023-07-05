@@ -1,4 +1,4 @@
-import axios, { AxiosResponse } from "axios";
+import axios from "axios";
 import React, { useState } from "react";
 import { QrReader } from "react-qr-reader";
 
@@ -9,25 +9,12 @@ export const Qrscan = () => {
 
   const handleData = async (data: string) => {
     try {
-      const response = await fetch("/api/random", {
-        method: "POST",
-        body: JSON.stringify({ qrstring: data }),
-        headers: {
-          "Content-Type": "application/json;charset=UTF-8",
-        },
-      });
+      const response = await axios.post("/api/random", { qrstring: data });
 
-      if (response.ok) {
-        const result = await response.json();
-        const { success, key, time } = result;
-
-        if (success) {
-          // Update the state or perform any other actions with the received data
-          console.log("Key:", key);
-          console.log("Time:", time);
-        } else {
-          console.error("An error occurred:", result.error);
-        }
+      if (response.status === 200) {
+        const { success, key, time } = response.data;
+        console.log("Key:", key);
+        console.log("Time:", time);
       } else {
         console.error("HTTP error:", response.status);
       }

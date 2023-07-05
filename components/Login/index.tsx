@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { useLogin } from "@/hooks/useLogin";
-import { useRouter } from "next/router";
-import React, { FormEvent, useState } from "react";
+import React, { useState } from "react";
 
 export default function Login() {
   const { email, setEmail, password, setPassword, handleSubmit } = useLogin();

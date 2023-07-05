@@ -1,5 +1,6 @@
 import React, { useState, FormEvent, useEffect, MouseEvent } from "react";
 import { useRouter } from "next/router";
+import axios from "axios";
 
 export const useLogin = () => {
   const [email, setEmail] = useState<string>("");
@@ -32,6 +33,7 @@ export const useLogin = () => {
 
     if (data.success) {
       // JWT 토큰을 클라이언트에 저장하는 코드 작성
+      axios.defaults.headers["x-access-token"] = data.token;
       localStorage.setItem("token", data.token);
       localStorage.setItem("admin", data.isAdmin);
       localStorage.setItem("userId", data.userId);
@@ -46,6 +48,7 @@ export const useLogin = () => {
   const handleLogout = (e: MouseEvent<HTMLButtonElement>) => {
     router.push("/");
     setIsLoggedIn(false);
+    delete axios.defaults.headers["x-access-token"];
     localStorage.removeItem("token");
     localStorage.removeItem("admin");
     localStorage.removeItem("userId");
