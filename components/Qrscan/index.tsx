@@ -16,31 +16,10 @@ export const Qrscan = () => {
     console.log("2");
     console.log(response.data.message);
 
-    // if (response.status === 200) {
-    //   const { success, key, time } = response.data;
-    //   console.log("Key:", key);
-    //   console.log("Time:", time);
-    // }
-    // if (response.data) {
-      
-    // }
-    // if (response.status === 201) {
-    //   const { message } = response.data;
-    //   alert(message);
-    // }
-
-    // if (response.status === 200) {
-    //   const { success, key, time } = response.data;
-    //   console.log("Key:", key);
-    //   console.log("Time:", time);
-    // } else if (response.status === 403) {
-    //   console.log("늦었어");
-    // } else {
-    //   console.error("HTTP error:", response.status);
-    // }
-
     if (response.data.message === "fail") {
       alert("인증 시간이 지났습니다")
+    } else {
+      alert("인증이 완료되었습니다")
     }
   };
 
