@@ -8,6 +8,7 @@ import React, {
 import NavBar from "../NavBar";
 import { useRouter } from "next/router";
 import { PostType } from "@/types/post.type";
+import axios from "axios";
 
 const NoticepostForm = () => {
   let user_id: string | null;

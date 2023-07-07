@@ -23,6 +23,11 @@ export const NoticePostItem = ({
     isAdmin = localStorage.getItem("admin");
   }
 
+  const handleClick = () => {
+    console.log("clicked");
+    
+  }
+
   return (
     <div className="mb-5">
       <div
@@ -35,7 +40,7 @@ export const NoticePostItem = ({
             <p className="pt-2">{name}</p>
           </div>
           {isAdmin === "1" ? (
-            <button className="w-[70px] h-[30px] bg-[#FF8080] text-[#F5F5F5] cursor-pointer">
+            <button className="w-[70px] h-[30px] bg-[#FF8080] text-[#F5F5F5] cursor-pointer" onClick={handleClick}>
               삭제
             </button>
           ) : null}

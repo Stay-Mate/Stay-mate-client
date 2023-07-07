@@ -11,31 +11,36 @@ export const Qrscan = () => {
   const [data, setData] = useState<string>("");
 
   const handleData = async (data: string) => {
-    try {
-      const response = await axios.post("/api/random", { qrstring: data });
+    console.log("1");
+    const response = await axios.post("/api/random", { qrstring: data });
+    console.log("2");
+    console.log(response.data.message);
 
-      if (response.status === 200) {
-        const { success, key, time } = response.data;
-        console.log("Key:", key);
-        console.log("Time:", time);
-        swal({
-          title: "인증되었습니다",
-          icon: "success",
-        });
-        router.push("/main");
+    // if (response.status === 200) {
+    //   const { success, key, time } = response.data;
+    //   console.log("Key:", key);
+    //   console.log("Time:", time);
+    // }
+    // if (response.data) {
+      
+    // }
+    // if (response.status === 201) {
+    //   const { message } = response.data;
+    //   alert(message);
+    // }
 
-      } else if (response.status === 500) {
-        swal({
-          title: "다시 인증하셔야 합니다",
-          text: "해당 QR코드 인증 유효 기간이 지났습니다",
-          icon: "fail",
-        });
-        router.push("/qrscan");
-      } else {
-        console.error("HTTP error:", response.status);
-      }
-    } catch (error) {
-      console.error("Error:", error);
+    // if (response.status === 200) {
+    //   const { success, key, time } = response.data;
+    //   console.log("Key:", key);
+    //   console.log("Time:", time);
+    // } else if (response.status === 403) {
+    //   console.log("늦었어");
+    // } else {
+    //   console.error("HTTP error:", response.status);
+    // }
+
+    if (response.data.message === "fail") {
+      alert("인증 시간이 지났습니다")
     }
   };
 
@@ -64,11 +69,12 @@ export const Qrscan = () => {
               // console.info(result, error);
               if (result) {
                 setData(result.getText());
+                console.log("0");
                 console.log(`loaded >>>`, result.getText());
                 handleData(result.getText());
               }
               if (!!error) {
-                console.log(error);
+                console.log("error", error);
               }
             }}
             className="m-auto w-[500px] h-[200%] border-4"

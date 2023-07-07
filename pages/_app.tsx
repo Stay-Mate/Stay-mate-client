@@ -3,20 +3,20 @@ import {
   QueryClient,
   QueryClientProvider,
   useQuery,
-  useQueryClient,
 } from "@tanstack/react-query";
 import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import axios from "axios";
+import Error from "next/error";
 
 const AppWrapper = ({ Component, pageProps }: AppProps) => {
   const router = useRouter();
   const [isAdmin, setIsAdmin] = useState(false);
   const { isLoading, refetch, data, isSuccess } = useQuery(
     ["user", "admin"],
-    () => axios.get("/api/admin").then((res) => res.data),
+    () => axios.get("/api/login/admin").then((res) => res.data),
     {
       retry: false,
       enabled: false,
@@ -39,11 +39,13 @@ const AppWrapper = ({ Component, pageProps }: AppProps) => {
   useEffect(() => {
     if (isAdmin) localStorage.setItem("admin", "1");
     else localStorage.setItem("admin", "0");
+
   }, [isAdmin]);
   return <Component {...pageProps} />;
 };
 
 export default function App(props: AppProps) {
+  
   const [queryClient] = useState(new QueryClient());
   return (
     <QueryClientProvider client={queryClient}>
