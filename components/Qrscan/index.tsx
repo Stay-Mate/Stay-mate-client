@@ -17,9 +17,11 @@ export const Qrscan = () => {
     console.log(response.data.message);
 
     if (response.data.message === "fail") {
-      alert("인증 시간이 지났습니다")
+      alert("인증 시간이 지났습니다");
+      router.push("/qrscan");
     } else {
-      alert("인증이 완료되었습니다")
+      alert("인증이 완료되었습니다");
+      router.push("/main")
     }
   };
 

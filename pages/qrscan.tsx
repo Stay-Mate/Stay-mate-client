@@ -6,8 +6,10 @@ const qrscan = () => {
   return (
     <>
       <NavBar />
-      <div className="pt-[150px]">
-        <Qrscan />
+      <div className="">
+        <div className="m-auto pt-60">
+          <Qrscan />
+        </div>
       </div>
     </>
   );
