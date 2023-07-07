@@ -39,6 +39,9 @@ const NavBar = () => {
           <li className="mr-2 hover:text-[#B2A4FF] cursor-pointer">
             <Link href="/main">홈</Link>
           </li>
+          <li className="mr-2 hover:text-[#B2A4FF] cursor-pointer">
+            <Link href="/qrscan">입소 인증하기</Link>
+          </li>
           {isAdmin === "1" && isLoggedIn ? (
             <li className="mr-2 hover:text-[#B2A4FF] cursor-pointer">
               <Link href="/allenter">전체 입소현황</Link>
@@ -66,7 +69,7 @@ const NavBar = () => {
           )}
         </ul>
 
-        <div onClick={handleNavBar} className="ml-[360px] pt-10 md:hidden">
+        <div onClick={handleNavBar} className="ml-[100px] pt-10 md:hidden">
           <AiOutlineMenu size={30} />
         </div>
       </div>
@@ -96,9 +99,12 @@ const NavBar = () => {
           </div>
 
           <div className="py-4 flex flex-col">
-            <ul className="ml-4 uppercase text-[35px] py-4">
+            <ul className="ml-4 uppercase text-[28px] py-4">
               <li className="mr-2 hover:text-[#B2A4FF] cursor-pointer mb-4">
                 <Link href="/main">홈</Link>
+              </li>
+              <li className="mr-2 hover:text-[#B2A4FF] cursor-pointer mb-4">
+                <Link href="/qrscan">입소 인증하기</Link>
               </li>
               {isAdmin === "1" && isLoggedIn ? (
                 <li className="mr-2 hover:text-[#B2A4FF] cursor-pointer mb-4">
