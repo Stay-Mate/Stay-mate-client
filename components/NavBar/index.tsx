@@ -22,7 +22,7 @@ const NavBar = () => {
   }
 
   return (
-    <nav className=" fixed flex flex-col  w-full h-[110px] shadow-md z-[100] ease-in-out duration-300 bg-[#FCFCFC]">
+    <nav className="fixed flex flex-col  w-full h-[110px] shadow-md z-[100] ease-in-out duration-300 bg-[#FCFCFC]">
       <div className="hidden md:flex justify-center items-center w-full h-full px-2 2xl:px-16">
         <Link href="/main">
           <Image src={navlogo} alt="/" width={100} height={100} />
