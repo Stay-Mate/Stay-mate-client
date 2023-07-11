@@ -9,8 +9,8 @@ export default function Login() {
   return (
     <div className="fixed w-screen h-full flex bg-white">
       <div className="w-[450px] h-screen bg-[#FFB4B4]"></div>
-      <div>
-        <div className="w-[400px] h-[230px] ml-[300px] mt-[130px] text-center ">
+      <div className="w-full pt-14">
+      <div className="w-[400px] h-[230px] m-auto text-center">
           <h2 className="font-normal text-[#EA7589] font-mono">LOG IN</h2>
           <form
             className="w-full h-full bg-slate-500] mt-[150px]"

@@ -32,16 +32,16 @@ const Signup = () => {
       router.push("/login");
     } else {
       // 회원가입 실패 처리
-      console.log("Sorry");
+      alert("가입에 실패했습니다. 처음부터 다시 입력해주세요");
     }
   };
 
   return (
     <div className="fixed w-screen h-full flex bg-white">
       <div className="w-[450px] h-screen bg-[#FFB4B4]"></div>
-      <div>
-        <div className="w-[400px] h-[230px] ml-[300px] mt-[130px] text-center ">
-          <h2 className="font-normal text-[#EA7589] font-mono">SIGN UP</h2>
+      <div className="w-full pt-14">
+        <div className="w-[400px] h-[230px] m-auto text-center">
+          <h2 className="font-normal text-[#EA7589] font-mono uppercase">sign up</h2>
           <form
             className="w-full h-full bg-slate-500] mt-[80px]"
             onSubmit={handleSubmit}
