@@ -96,8 +96,8 @@ const NoticepostForm = () => {
             }
           />
           <br />
-          <input
-            className="w-[800px] h-[50px] outline-none text-lg text-[#766D6D] ml-10 mt-5 p-2 border-b-2"
+          <textarea
+            className="w-[800px] h-[150px] outline-none text-lg text-[#766D6D] ml-10 mt-5 p-2 border-b-2"
             placeholder="내용"
             value={post.content}
             onChange={(e) =>

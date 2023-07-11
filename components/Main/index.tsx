@@ -3,8 +3,8 @@ import { NoticepostList } from "../NoticePost/NoticepostList";
 
 const Main = () => {
   return (
-    <div className="">
-      <div className="flex pt-[130px] pl-[200px]">
+    <div>
+      <div className="pt-[130px] flex justify-center">
         <NoticepostList />
       </div>
     </div>
