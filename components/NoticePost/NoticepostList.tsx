@@ -24,19 +24,17 @@ export const NoticepostList = () => {
   }, []);
 
   return (
-    <div className="">
-      <div className="flex flex-col items-center">
-        {/* {postList.map((post: PostType) => (
-          <NoticePostItem
-            key={post.post_id}
-            created_at={post.created_at}
-            name={post.name}
-            title={post.title}
-            content={post.content}
-            post_id={post.post_id}
-          />
-        ))} */}
-      </div>
+    <div className="w-[600px]">
+      {postList.map((post: PostType) => (
+        <NoticePostItem
+          key={post.post_id}
+          created_at={post.created_at}
+          name={post.name}
+          title={post.title}
+          content={post.content}
+          post_id={post.post_id}
+        />
+      ))}
     </div>
   );
 };

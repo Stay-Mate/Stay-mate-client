@@ -92,9 +92,9 @@ const NavBar = () => {
 
       <div className="flex justify-end mr-[20px] md:hidden pt-6">
         {isMobile ? (
-          <AiOutlineMenu size={30} onClick={handleNavBar} />
+          <AiOutlineMenu size={25} onClick={handleNavBar} />
         ) : (
-          <AiOutlineClose size={30} onClick={handleNavBar} />
+          <AiOutlineMenu size={30} onClick={handleNavBar} />
         )}
       </div>
 
@@ -123,7 +123,7 @@ const NavBar = () => {
           </div>
 
           <div className="py-4 flex flex-col">
-            <ul className="ml-4 uppercase text-[28px] py-4">
+            <ul className="ml-4 uppercase text-[20px] py-4">
               <li className="mr-2 hover:text-[#B2A4FF] cursor-pointer mb-4">
                 <Link href="/main">홈</Link>
               </li>
@@ -148,7 +148,7 @@ const NavBar = () => {
                 <li className="mr-2 hover:text-[#B2A4FF] cursor-pointer mb-4">
                   <button
                     onClick={handleLogout}
-                    className="bg-[#ECF0F3] shadow-none"
+                    className="bg-none shadow-none"
                   >
                     로그아웃
                   </button>

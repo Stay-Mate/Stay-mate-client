@@ -28,8 +28,8 @@ export const NoticePostItem = ({
   };
 
   return (
-    <div className="w-96 mb-5">
-      <div className="p-4 col-span-3 w-full lg:w-[700px] h-auto shadow-xl shadow-gray-200 rounded-sm lg:p-6 bg-[#FBFBFB] mr-[50px]">
+    <div className="w-auto mb-5">
+      <div className="p-4 col-span-3 w-full lg:w-[600px] h-auto shadow-xl shadow-gray-200 rounded-sm lg:p-4 bg-[#FBFBFB]">
 
         <div className="w-full flex justify-between">
           <div className="w-[100px] flex justify-between">
@@ -46,6 +46,7 @@ export const NoticePostItem = ({
         <div className="flex w-full h-[15px] mt-4">{title}</div>
         <p className="w-full h-full text-xl pt-2">{content}</p>
         <div>{formatDateTime(created_at)}</div>
+
       </div>
     </div>
   );
