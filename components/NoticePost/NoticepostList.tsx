@@ -24,9 +24,9 @@ export const NoticepostList = () => {
   }, []);
 
   return (
-    <div className="flex justify-center h-screen">
-      <div className="flex flex-col items-center"> {/* 왼쪽 여백 추가 */}
-        {postList.map((post: PostType) => (
+    <div className="">
+      <div className="flex flex-col items-center">
+        {/* {postList.map((post: PostType) => (
           <NoticePostItem
             key={post.post_id}
             created_at={post.created_at}
@@ -35,7 +35,7 @@ export const NoticepostList = () => {
             content={post.content}
             post_id={post.post_id}
           />
-        ))}
+        ))} */}
       </div>
     </div>
   );
