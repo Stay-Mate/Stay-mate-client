@@ -76,7 +76,7 @@ const NavBar = () => {
               <li className="mr-2 hover:text-[#B2A4FF] cursor-pointer mb-4">
                 <button
                   onClick={handleLogout}
-                  className="bg-[#ECF0F3] shadow-none"
+                  className="bg-[#fff] shadow-none"
                 >
                   로그아웃
                 </button>
@@ -148,7 +148,7 @@ const NavBar = () => {
                 <li className="mr-2 hover:text-[#B2A4FF] cursor-pointer mb-4">
                   <button
                     onClick={handleLogout}
-                    className="bg-none shadow-none"
+                    className="bg-[#ECF0F3] shadow-none"
                   >
                     로그아웃
                   </button>
