@@ -11,8 +11,6 @@ export const NoticepostList = () => {
       try {
         const response = await axios.get("/api/post");
         const data = response.data;
-        console.log(data[0].post_id);
-
         setPostList(data);
       } catch (error) {
         console.log("Error fetching posts:", error);

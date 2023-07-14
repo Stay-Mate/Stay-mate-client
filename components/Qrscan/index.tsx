@@ -11,10 +11,8 @@ export const Qrscan = () => {
   const [data, setData] = useState<string>("");
 
   const handleData = async (data: string) => {
-    console.log("1");
     const response = await axios.post("/api/random", { qrstring: data });
-    console.log("2");
-    console.log(response.data.message);
+    // console.log(response.data.message);
 
     if (response.data.message === "fail") {
       alert("인증 시간이 지났습니다");
@@ -47,7 +45,6 @@ export const Qrscan = () => {
             constraints={{ facingMode: selected }}
             onResult={(result, error) => {
               // lodash debounce or throttle
-              // console.info(result, error);
               if (result) {
                 setData(result.getText());
                 console.log("0");
