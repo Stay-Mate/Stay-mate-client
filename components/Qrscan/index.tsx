@@ -26,7 +26,7 @@ export const Qrscan = () => {
   return (
     <div className="text-center">
       <button
-        className="w-[130px] h-[40px] mb-5"
+        className="w-[130px] h-[40px]"
         onClick={() => {
           setStartScan(!startScan);
         }}
@@ -35,7 +35,7 @@ export const Qrscan = () => {
       </button>
 
       {startScan && (
-        <div>
+        <div className="pt-20">
           <select onChange={(e) => setSelected(e.target.value)}>
             <option value={"environment"}>후면 카메라</option>
             <option value={"user"}>전면 카메라</option>
