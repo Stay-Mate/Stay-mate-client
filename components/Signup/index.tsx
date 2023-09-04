@@ -70,12 +70,12 @@ const Signup = () => {
                 required
               />
               {!emailValid ? (
-                <p className="mr-32 mb-3 text-red-700">
+                <p className="w-[260px] mr-40 text-red-700">
                   {" "}
                   {"@bssm.hs.kr"} 를 포함하여 입력하세요.
                 </p>
               ) : (
-                <p className="mr-32 mb-3">
+                <p className="w-[260px] mr-40 mb-3">
                   {" "}
                   {"@bssm.hs.kr"}를 포함하여 입력하세요.
                 </p>
@@ -96,12 +96,12 @@ const Signup = () => {
                 required
               />
               {!passwordlValid ? (
-                <p className="mr-60 mb-3 text-red-700">
+                <p className="w-[160px] mr-40 text-red-700">
                   {" "}
                   8자리 이상 입력하세요.
                 </p>
               ) : (
-                <p className="mr-60 mb-3"> 8자리 이상 입력하세요.</p>
+                <p className="w-[160px] mr-40 mb-3"> 8자리 이상 입력하세요.</p>
               )}
             </div>
             <div className="flex flex-col mb-4">

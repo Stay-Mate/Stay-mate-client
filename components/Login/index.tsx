@@ -10,14 +10,14 @@ export default function Login() {
     <div className="fixed w-screen h-full flex bg-white">
       <div className="w-[450px] h-screen bg-[#FFB4B4]"></div>
       <div className="w-full pt-14">
-      <div className="w-[400px] h-[230px] m-auto text-center">
+        <div className="w-[400px] h-[230px] m-auto text-center">
           <h2 className="font-normal text-[#EA7589] font-mono">LOG IN</h2>
           <form
             className="w-full h-full bg-slate-500] mt-[150px]"
             onSubmit={handleSubmit}
           >
             <div className="flex flex-col">
-              <div className="mr-[350px] text-gray-500">이메일</div>
+              <div className="mr-[340px] text-gray-500">이메일</div>
               <input
                 className="pt-3 pb-2 outline-none border-b-2 text-gray-600"
                 value={email}
@@ -30,13 +30,11 @@ export default function Login() {
                 required
               />
               {!emailValid ? (
-                <p className="mr-32 mb-3 text-red-700">
-                  {" "}
+                <p className="w-[260px] mr-40 text-red-700">
                   {"@bssm.hs.kr"} 를 포함하여 입력하세요.
                 </p>
               ) : (
-                <p className="mr-32 mb-3">
-                  {" "}
+                <p className="w-[260px] mr-40 mb-3">
                   {"@bssm.hs.kr"}를 포함하여 입력하세요.
                 </p>
               )}
@@ -56,12 +54,12 @@ export default function Login() {
                 required
               />
               {!passwordlValid ? (
-                <p className="mr-60 mb-3 text-red-700">
+                <p className="w-[160px] mr-40 text-red-700">
                   {" "}
                   8자리 이상 입력하세요.
                 </p>
               ) : (
-                <p className="mr-60 mb-3"> 8자리 이상 입력하세요.</p>
+                <p className="w-[160px] mr-40 mb-3"> 8자리 이상 입력하세요.</p>
               )}
             </div>
             <br />
