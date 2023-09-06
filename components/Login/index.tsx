@@ -17,7 +17,7 @@ export default function Login() {
             onSubmit={handleSubmit}
           >
             <div className="flex flex-col">
-              <div className="mr-[340px] text-gray-500">이메일</div>
+              <div className="mr-[357px] text-gray-500">이메일</div>
               <input
                 className="pt-3 pb-2 outline-none border-b-2 text-gray-600"
                 value={email}
@@ -59,7 +59,7 @@ export default function Login() {
                   8자리 이상 입력하세요.
                 </p>
               ) : (
-                <p className="w-[160px] mr-40 mb-3"> 8자리 이상 입력하세요.</p>
+                <p className="w-[157px] mr-48 mb-3"> 8자리 이상 입력하세요.</p>
               )}
             </div>
             <br />

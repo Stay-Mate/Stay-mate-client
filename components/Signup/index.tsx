@@ -47,7 +47,7 @@ const Signup = () => {
             onSubmit={handleSubmit}
           >
             <div className="flex flex-col mb-4">
-              <div className="mr-96 text-gray-500">name</div>
+              <div className="w-[30px] mr-96 text-gray-500">이름</div>
               <input
                 className="pt-3 pb-2 outline-none border-b-2 text-gray-600"
                 value={name}
@@ -57,7 +57,7 @@ const Signup = () => {
               />
             </div>
             <div className="flex flex-col mb-4">
-              <div className="mr-96 text-gray-500">email</div>
+              <div className="w-[44px] mr-96 text-gray-500">이메일</div>
               <input
                 className="pt-3 pb-2 outline-none border-b-2 text-gray-600"
                 value={email}
@@ -82,7 +82,7 @@ const Signup = () => {
               )}
             </div>
             <div className="flex flex-col mb-4">
-              <div className="mr-96 text-gray-500">password</div>
+              <div className="w-[58px] mr-96 text-gray-500">비밀번호</div>
               <input
                 className="pt-3 pb-2 outline-none border-b-2 text-gray-600"
                 type="password"
@@ -105,7 +105,7 @@ const Signup = () => {
               )}
             </div>
             <div className="flex flex-col mb-4">
-              <div className="mr-96 text-gray-500">Room</div>
+              <div className="w-[62px] mr-96 text-gray-500">호실 번호</div>
               <input
                 className="pt-3 pb-2 outline-none border-b-2 text-gray-600"
                 value={room_number}
