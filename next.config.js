@@ -6,7 +6,7 @@ const nextConfig = {
     return [
       {
         source: "/api/:path*",
-        destination: "http://3106.solrukas.me/api/:path*",
+        destination: "http://localhost:8080/api/:path*",
       },
     ];
   },
