@@ -1,6 +1,7 @@
 import React, { useState, FormEvent, useEffect, MouseEvent } from "react";
 import { useRouter } from "next/router";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 export const useLogin = () => {
   const [email, setEmail] = useState<string>("");
@@ -37,11 +38,17 @@ export const useLogin = () => {
       localStorage.setItem("token", data.token);
       localStorage.setItem("admin", data.isAdmin);
       localStorage.setItem("userId", data.userId);
-      console.log("success");
+      Swal.fire({
+        icon: "success",
+        title: "로그인 성공",
+      });
       router.push("/main");
     } else {
       // 로그인 실패 처리
-      console.log("Sorry");
+      Swal.fire({
+        icon: "error",
+        title: "로그인 실패",
+      });
     }
   };
 
