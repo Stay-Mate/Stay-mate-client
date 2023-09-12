@@ -42,6 +42,9 @@ export const useLogin = () => {
         icon: "success",
         title: "로그인 성공",
       });
+
+      console.log("success");
+      
       router.push("/main");
     } else {
       // 로그인 실패 처리
