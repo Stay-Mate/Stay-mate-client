@@ -38,10 +38,10 @@ export const useLogin = () => {
       localStorage.setItem("token", data.token);
       localStorage.setItem("admin", data.isAdmin);
       localStorage.setItem("userId", data.userId);
-      // Swal.fire({
-      //   icon: "success",
-      //   title: "로그인 성공",
-      // });
+      Swal.fire({
+        icon: "success",
+        title: "로그인 성공",
+      });
 
       console.log("success");
       
