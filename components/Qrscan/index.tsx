@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, { Axios, AxiosResponse } from "axios";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { QrReader } from "react-qr-reader";
@@ -10,7 +10,7 @@ export const Qrscan = () => {
   const [data, setData] = useState<string>("");
 
   const handleData = async (data: string) => {
-    const response = await axios.post("/api/random", { qrstring: data });
+    const response: AxiosResponse = await axios.post("/api/random", { qrstring: data });
 
     if (response.data.message === "fail") {
       alert("인증 시간이 지났습니다");
