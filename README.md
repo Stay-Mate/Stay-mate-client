@@ -3,3 +3,4 @@
     - next.js
     - yarn
     - typescript
+    - tailwindCSS
