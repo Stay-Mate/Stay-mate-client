@@ -29,13 +29,13 @@ const AppWrapper = ({ Component, pageProps }: AppProps) => {
       },
     }
   );
-  useEffect(() => {
-    if (localStorage.getItem("token")) {
-      axios.defaults.headers["x-access-token"] = localStorage.getItem("token");
-      refetch();
-    }
-    // if (router.asPath === "/") router.replace("/main");
-  }, [router.asPath]);
+  // useEffect(() => {
+  //   if (localStorage.getItem("token")) {
+  //     axios.defaults.headers["x-access-token"] = localStorage.getItem("token");
+  //     refetch();
+  //   }
+  //   // if (router.asPath === "/") router.replace("/main");
+  // }, [router.asPath]);
   useEffect(() => {
     if (isAdmin) localStorage.setItem("admin", "1");
     else localStorage.setItem("admin", "0");
